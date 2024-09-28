@@ -28,8 +28,8 @@ class MovieSerializer(serializers.Serializer):
 class CinemaHallSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(max_length=255)
-    rows = serializers.IntegerField(read_only=True)
-    seats_in_row = serializers.IntegerField(read_only=True)
+    rows = serializers.IntegerField(read_only=False)
+    seats_in_row = serializers.IntegerField(read_only=False)
 
     def create(self, validated_data):
         return CinemaHall.objects.create(**validated_data)
