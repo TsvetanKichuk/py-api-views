@@ -24,7 +24,7 @@ class Movie(models.Model):
     actors = models.ManyToManyField(Actor, related_name="movies")
 
     def __str__(self) -> str:
-        return f"{self.title}, {self.description}, {self.duration}, {self.genres}"
+        return f"{self.title}, {self.genres}, {self.duration} "
 
 
 class CinemaHall(models.Model):
