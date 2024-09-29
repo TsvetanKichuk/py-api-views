@@ -23,6 +23,9 @@ class Movie(models.Model):
     genres = models.ManyToManyField(Genre, related_name="movies")
     actors = models.ManyToManyField(Actor, related_name="movies")
 
+    class Meta:
+        ordering = ("title",)
+
     def __str__(self) -> str:
         return f"{self.title}, {self.genres}, {self.duration} "
 
